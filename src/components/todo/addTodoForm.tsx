@@ -1,7 +1,7 @@
 import { todoTextAtom } from '@/state/todoText';
 import { ChangeEvent, FC } from 'react';
 import { useRecoilState } from 'recoil';
-import { Input } from './ui/input';
+import { Input } from '../ui/input';
 
 const AddTodoForm: FC = () => {
   const [todoText, setTodoText] = useRecoilState(todoTextAtom);

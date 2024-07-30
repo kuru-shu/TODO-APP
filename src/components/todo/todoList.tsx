@@ -3,7 +3,7 @@
 import { todoListAtom } from '@/state/todoList';
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 const TodoList: FC = () => {
   const todoList = useRecoilValue(todoListAtom);
