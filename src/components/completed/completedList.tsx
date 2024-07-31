@@ -8,7 +8,7 @@ const CompletedList: FC = () => {
   const completedList = useRecoilValue(completedListAtom);
 
   return (
-    <div>
+    <div className="text-center">
       <ul>
         {completedList.map((completedItem, index) => {
           return (

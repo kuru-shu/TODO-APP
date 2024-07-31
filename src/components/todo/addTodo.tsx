@@ -6,7 +6,7 @@ import AddTodoForm from './addTodoForm';
 
 const AddTodo: FC = () => {
   return (
-    <div className="flex gap-3 m-3">
+    <div className="flex">
       <AddTodoForm />
       <AddButton />
     </div>
