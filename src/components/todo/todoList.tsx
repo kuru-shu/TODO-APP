@@ -31,10 +31,10 @@ const TodoList: FC = () => {
         {todoList.map((todoItem, index) => {
           return (
             <li key={index} className="mt-2 text-center">
-              <span className="mr-1">{todoItem}</span>
+              <span className="mr-1">{todoItem.title}</span>
               <Button
                 className="h-5 bg-amber-400	hover:bg-amber-500"
-                onClick={() => onClickCompleted(index, todoItem)}
+                onClick={() => onClickCompleted(index, todoItem.title)}
               >
                 完了
               </Button>

@@ -13,7 +13,7 @@ const AddTodoForm: FC = () => {
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.nativeEvent.isComposing || e.key !== 'Enter') return;
     const newTodoList = [...todoList];
-    newTodoList.push(todoText);
+    newTodoList.push({ title: todoText });
     setTodoList(newTodoList);
     setTodoText('');
   };
