@@ -10,7 +10,7 @@ const AddButton: FC = () => {
 
   const onClick = () => {
     const newTodoList = [...todoList];
-    newTodoList.push(todoText);
+    newTodoList.push({ title: todoText });
     setTodoList(newTodoList);
     setTodoText('');
   };
