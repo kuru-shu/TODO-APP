@@ -14,7 +14,6 @@ const AddButton: FC = () => {
     setTodoList(newTodoList);
     setTodoText('');
   };
-
   return <Button onClick={onClick}>追加</Button>;
 };
 export default AddButton;
