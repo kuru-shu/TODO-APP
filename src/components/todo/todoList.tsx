@@ -4,15 +4,22 @@ import { completedListAtom } from '@/state/completedList';
 import { todoListAtom } from '@/state/todoList';
 import { FC } from 'react';
 import { useRecoilState } from 'recoil';
+import DeleteButton from '../shared/deleteButton';
 import { Button } from '../ui/button';
 
 const TodoList: FC = () => {
   const [todoList, setTodoList] = useRecoilState(todoListAtom);
   const [completedList, setCompletedList] = useRecoilState(completedListAtom);
-  const onClick = (index: number, completedItem: string) => {
+  const onClickCompleted = (index: number, completedItem: string) => {
     const newCompletedList = [...completedList];
     newCompletedList.push(completedItem);
     setCompletedList(newCompletedList);
+    const newTodoList = [...todoList];
+    newTodoList.splice(index, 1);
+    setTodoList(newTodoList);
+  };
+
+  const onClickDelete = (index: number) => {
     const newTodoList = [...todoList];
     newTodoList.splice(index, 1);
     setTodoList(newTodoList);
@@ -27,10 +34,11 @@ const TodoList: FC = () => {
               <span className="mr-1">{todoItem}</span>
               <Button
                 className="h-5 bg-amber-400	hover:bg-amber-500"
-                onClick={() => onClick(index, todoItem)}
+                onClick={() => onClickCompleted(index, todoItem)}
               >
                 完了
               </Button>
+              <DeleteButton onClick={() => onClickDelete(index)} />
             </li>
           );
         })}
