@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex justify-center	items-center mt-5">
       <Tabs defaultValue="TODO_LIST" className="w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="TODO_LIST">TODO</TabsTrigger>
